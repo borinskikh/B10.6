@@ -1,0 +1,14 @@
+To convert your currency send a properly formatted message.
+
+Commands:
+/values - sends the information about all available currencies
+/start, /help - sends this message
+
+Message formatting:
+First argument - the currency you want to convert
+Second argument - the currency it will be converted into
+Third argument - how much you want to convert
+All arguments should be separated by spaces
+Case doesn't matter
+
+Example: "USD CAD 100"
