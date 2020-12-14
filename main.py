@@ -3,7 +3,7 @@ from extensions import Price, APIException
 
 
 bot = telebot.TeleBot(open("token", "r").read())
-bot.polling()
+bot.polling(none_stop=True)
 
 
 @bot.message_handler(commands=['start', 'help'])
