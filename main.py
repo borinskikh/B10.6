@@ -21,7 +21,7 @@ def valuesCommandHandler(message):
         keys = rates.keys()
         output = ""
         for key in keys:
-            output += str(round(rates[key], 2))+" "+key + ": 1 EUR\n"
+            output += str(round(rates[key], 2))+" "+key + "\n"
     except Exception as e:
         output = e
     bot.send_message(message.chat.id, output)
