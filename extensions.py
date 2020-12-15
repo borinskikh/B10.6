@@ -33,6 +33,7 @@ class Price:
         if quote not in rates:
             raise APIException(
                 quote + ' is not in the available exchange rates')
-        price = float(amount) * \
-            rates[quote] / rates[base]
-        return round(price, 2)
+        price = round(float(amount) *
+                      rates[quote] / rates[base], 2)
+        output = str(amount)+" "+base+" = "+str(price)+" "+quote
+        return output

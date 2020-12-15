@@ -3,7 +3,6 @@ from extensions import Price, APIException
 
 
 bot = telebot.TeleBot(open("token", "r").read())
-bot.polling(none_stop=True)
 
 
 @bot.message_handler(commands=['start', 'help'])
@@ -18,7 +17,11 @@ def startCommandsHandler(message):
 @bot.message_handler(commands=['values'])
 def valuesCommandHandler(message):
     try:
-        output = Price.get_rates()
+        rates = Price.get_rates()
+        keys = rates.keys()
+        output = ""
+        for key in keys:
+            output += key + ": "+str(rates[key])+" EUR\n"
     except Exception as e:
         output = e
     bot.send_message(message.chat.id, output)
@@ -37,3 +40,6 @@ def messageHandler(message):
     except Exception as e:
         output = e
     bot.send_message(message.chat.id, output)
+
+
+bot.polling()
