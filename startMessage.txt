@@ -1,7 +1,7 @@
 To convert your currency send a properly formatted message.
 
 Commands:
-/values - sends the information about all available currencies
+/values - sends the information about all available currencies, it shows how much of each currency is equal in values to 1 euro
 /start, /help - sends this message
 
 Message formatting:

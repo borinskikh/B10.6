@@ -21,13 +21,13 @@ def valuesCommandHandler(message):
         keys = rates.keys()
         output = ""
         for key in keys:
-            output += key + ": "+str(rates[key])+" EUR\n"
+            output += str(round(rates[key], 2))+" "+key + ": 1 EUR\n"
     except Exception as e:
         output = e
     bot.send_message(message.chat.id, output)
 
 
-@bot.message_handler(content_types=['text'])
+@ bot.message_handler(content_types=['text'])
 def messageHandler(message):
     try:
         messageText = message.text.split()
